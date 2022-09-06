@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 module.exports = {
   mode: 'development',
-  entry: ['@babel/polyfill', './src/index.jsx'],
+  entry: ['@babel/polyfill', './src/index.tsx'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[hash].js'
@@ -15,6 +15,9 @@ module.exports = {
     compress: true,
     port: 8080,
     open: true
+  },
+  resolve: {
+    extensions: ["*",'.tsx', '.ts', ".js", ".jsx", ".scss"], //чтобы каждый раз не проставлять расширения
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -54,7 +57,12 @@ module.exports = {
             presets: ['@babel/preset-env', '@babel/preset-react']
           }
         }
-      }
+      },
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        loader: 'ts-loader'
+     }
     ]
   }
 }
