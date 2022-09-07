@@ -1,0 +1,47 @@
+.page {
+  padding: 0 80px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(../../images/background.png);
+  background-size: cover;
+  position: relative;
+}
+
+.page::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 5e-05) 49.88%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+.content {
+  max-width: 1120px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+.title {
+  margin: 36px 0 24px 0;
+  font-family: 'Exo2.0';
+  font-weight: 100;
+  font-size: 36px;
+  line-height: 44px;
+  color: #FFFFFF;
+  text-shadow: 0px 1px 1px #000000;
+}
+
+.cards {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}

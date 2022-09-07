@@ -1,0 +1,29 @@
+.card {
+
+}
+
+.card__template {
+  width: 320px;
+  height: 480px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, transparent 30px, #1698D9 0) top left;
+  position: relative;
+}
+
+.card__template::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: calc(100% - 4px*2);
+  height: calc(100% - 4px*2);
+  border-radius: 12px;
+  background: linear-gradient(135deg, transparent 29px, #F2F2F2 0) top left;
+}
+
+.card__caption {
+  margin-top: 14px;
+  color: #FFFFFF;
+  text-align: center;
+}

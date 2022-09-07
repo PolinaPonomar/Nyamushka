@@ -35,8 +35,7 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/,
-        exclude: /node_modules/,
-        use: ['file-loader']
+        type: 'asset/resource'
       },
       {
         test: /\.m?js$/,
