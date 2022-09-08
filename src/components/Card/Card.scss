@@ -1,13 +1,18 @@
 .card {
-
+  display: flex;
+  flex-direction: column;
 }
 
 .card__template {
   width: 320px;
   height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border-radius: 12px;
   background: linear-gradient(135deg, transparent 30px, #1698D9 0) top left;
   position: relative;
+  z-index: 0;
 }
 
 .card__template::before {
@@ -20,10 +25,87 @@
   height: calc(100% - 4px*2);
   border-radius: 12px;
   background: linear-gradient(135deg, transparent 29px, #F2F2F2 0) top left;
+  z-index: -1;
+}
+
+.card__text {
+  margin-left: 51px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__tagline {
+  margin: 21px 0 5px 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #666666;
+}
+
+.card__title {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 56px;
+  color: #000000;
+}
+
+.card__subtitle {
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+}
+
+.card__description {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #666666;
+}
+
+.card__photo {
+  width: 320px;
+  height: 272px;
+}
+
+.card__sticker {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #1698D9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__sticker-text {
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 2px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.card__sticker-text_accent {
+  font-size: 42px;
+  line-height: 22px;
 }
 
 .card__caption {
   margin-top: 14px;
   color: #FFFFFF;
   text-align: center;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+}
+
+.card__caption_link {
+  color: #1698D9;
+  text-decoration: none;
+  border-bottom: dashed;
 }

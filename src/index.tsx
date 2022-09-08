@@ -2,8 +2,11 @@ import './index.scss'
 import React from 'react'
 import {render} from 'react-dom'
 import App from './components/App/App'
+import { BrowserRouter } from "react-router-dom";
 
 render(
-  <App num={1234}/>,
+  <BrowserRouter>
+    <App num={1234}/>
+  </BrowserRouter>,
   document.getElementById('root')
 )
