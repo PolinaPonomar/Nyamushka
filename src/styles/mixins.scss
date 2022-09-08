@@ -1,0 +1,12 @@
+@import './variables.scss';
+
+// общие стили шрифтов 
+@mixin card-text-font {
+  font-weight: 400;
+  color: $card-text-font-color;
+}
+
+@mixin card-title-font {
+  font-weight: 700;
+  color: $card-title-font-color;
+}

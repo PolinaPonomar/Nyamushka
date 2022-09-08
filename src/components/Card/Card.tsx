@@ -6,21 +6,28 @@ import image from '../../images/cat.png'
 
 const Card = () => {
   return (
-    <div className="card">
-      <div className="card__template">
+    <div className="wrapper">
+      <Link className="card" to="/">
         <div className="card__text">
           <p className="card__tagline">Сказочное заморское яство</p>
           <p className="card__title">Нямушка</p>
           <p className="card__subtitle">с фуа-гра</p>
-          <p className="card__description">10 порций</p>
+          <p className="card__description">
+            <span className="card__description card__description_accent">10 </span>
+            порций
+          </p>
           <p className="card__description">мышь в подарок</p>
         </div>
         <img className="card__photo" src={image} alt='Пушистый котик со светлой шерсткой и миндальными глазами'/>
         <div className="card__sticker">
-          <p className="card__sticker-text card__sticker-text_accent">0,5<br/><span className="card__sticker-text">кг</span></p>
+          <p className="card__sticker-text card__sticker-text_accent">
+            0,5
+            <br/>
+            <span className="card__sticker-text">кг</span>
+          </p>
         </div>
-      </div>
-      <p className="card__caption">Чего сидишь? Порадуй котэ, <Link className="card__caption card__caption_link" to="/">купи.</Link></p>
+      </Link>
+      <p className="caption">Чего сидишь? Порадуй котэ, <Link className="caption caption_link" to="/">купи.</Link></p>
     </div>
   );
 };

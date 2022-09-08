@@ -1,72 +1,88 @@
-.card {
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.wrapper {
   display: flex;
   flex-direction: column;
 }
 
-.card__template {
-  width: 320px;
-  height: 480px;
+.card {
+  position: relative;
+  padding: $card-order-width;
+  width: calc(320px - $card-order-width*2);
+  height: calc(480px - $card-order-width*2);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background: linear-gradient(135deg, transparent 30px, $accent-color 0) top left;
   border-radius: 12px;
-  background: linear-gradient(135deg, transparent 30px, #1698D9 0) top left;
-  position: relative;
+  box-sizing: content-box;
+  text-decoration: none;
   z-index: 0;
 }
 
-.card__template::before {
+.card::before {
   content: '';
   display: block;
   position: absolute;
-  top: 4px;
-  left: 4px;
-  width: calc(100% - 4px*2);
-  height: calc(100% - 4px*2);
+  top: $card-order-width;
+  left: $card-order-width;
+  width: calc(100% - $card-order-width*2);
+  height: calc(100% - $card-order-width*2);
   border-radius: 12px;
-  background: linear-gradient(135deg, transparent 29px, #F2F2F2 0) top left;
+  background: linear-gradient(135deg, transparent 29px, $card-background-color 0) top left;
   z-index: -1;
 }
 
+.card:hover {
+  background: linear-gradient(135deg, transparent 30px, $hover-accent-color 0) top left;
+}
+
+// .card:active {
+//   background: linear-gradient(135deg, transparent 30px, $selected-accent-color 0) top left;
+// }
+
 .card__text {
-  margin-left: 51px;
+  margin-left: calc(51px - $card-order-width);
   display: flex;
   flex-direction: column;
 }
 
 .card__tagline {
-  margin: 21px 0 5px 0;
-  font-weight: 400;
+  margin: calc(21px - $card-order-width) 0 5px 0;
   font-size: 16px;
   line-height: 19px;
-  color: #666666;
+  @include card-text-font;
 }
 
 .card__title {
-  font-weight: 700;
+  margin-left: -3px;
   font-size: 48px;
   line-height: 56px;
-  color: #000000;
+  @include card-title-font;
 }
 
 .card__subtitle {
   margin-bottom: 15px;
-  font-weight: 700;
   font-size: 24px;
   line-height: 28px;
-  color: #000000;
+  @include card-title-font;
 }
 
 .card__description {
-  font-weight: 400;
   font-size: 14px;
   line-height: 16px;
-  color: #666666;
+  @include card-text-font;
+}
+
+.card__description_accent {
+  font-weight: 700;
 }
 
 .card__photo {
   width: 320px;
   height: 272px;
+  border-radius: 12px;
 }
 
 .card__sticker {
@@ -76,18 +92,26 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background-color: #1698D9;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: $accent-color;
 }
+
+.card:hover .card__sticker {
+  background-color: $hover-accent-color;
+}
+
+// .card:active .card__sticker {
+//   background-color: $selected-accent-color;
+// }
 
 .card__sticker-text {
   font-weight: 400;
   font-size: 21px;
   line-height: 2px;
   text-align: center;
-  color: #FFFFFF;
+  color: $sticker-font-color;
 }
 
 .card__sticker-text_accent {
@@ -95,17 +119,21 @@
   line-height: 22px;
 }
 
-.card__caption {
+.caption {
   margin-top: 14px;
-  color: #FFFFFF;
-  text-align: center;
   font-weight: 400;
   font-size: 13px;
   line-height: 15px;
+  text-align: center;
+  color: $caption-color;
 }
 
-.card__caption_link {
-  color: #1698D9;
+.caption_link {
   text-decoration: none;
+  color: $link-color;
   border-bottom: dashed;
+}
+
+.caption_link:hover {
+  color: $link-cover-color;
 }

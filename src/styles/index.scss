@@ -1,9 +1,12 @@
+@import './variables.scss';
+@import './mixins.scss';
+
 @font-face {
   font-family: 'Exo2.0';
   src:
-    url('./fonts/Exo2-Thin.woff2') format('woff2'),
-    url('./fonts/Exo2-Thin.woff') format('woff'),
-    url('./fonts/Exo2-Thin.ttf') format('ttf');
+    url('../fonts/Exo2-Thin.woff2') format('woff2'),
+    url('../fonts/Exo2-Thin.woff') format('woff'),
+    url('../fonts/Exo2-Thin.ttf') format('ttf');
   font-weight: 100;
 }
 
