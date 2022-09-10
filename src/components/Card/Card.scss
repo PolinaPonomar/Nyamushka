@@ -38,9 +38,13 @@
   background: linear-gradient(135deg, transparent 30px, $hover-accent-color 0) top left;
 }
 
-// .card:active {
-//   background: linear-gradient(135deg, transparent 30px, $selected-accent-color 0) top left;
-// }
+.card_selected {
+  background: linear-gradient(135deg, transparent 30px, $selected-accent-color 0) top left;
+}
+
+.card_selected:hover {
+  background: linear-gradient(135deg, transparent 30px, $hover-selected-accent-color 0) top left;
+}
 
 .card__text {
   margin-left: calc(51px - $card-order-width);
@@ -102,9 +106,13 @@
   background-color: $hover-accent-color;
 }
 
-// .card:active .card__sticker {
-//   background-color: $selected-accent-color;
-// }
+.card__sticker_selected {
+  background-color: $selected-accent-color;
+}
+
+.card:hover .card__sticker_selected {
+  background-color: $hover-selected-accent-color;
+}
 
 .card__sticker-text {
   font-weight: 400;
