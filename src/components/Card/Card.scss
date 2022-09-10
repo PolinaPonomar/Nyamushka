@@ -46,10 +46,23 @@
   background: linear-gradient(135deg, transparent 30px, $hover-selected-accent-color 0) top left;
 }
 
+.card_disabled  {
+  background: linear-gradient(135deg, transparent 30px, $disabled-accent-color 0) top left;
+}
+
+.card_disabled:hover  {
+  background: linear-gradient(135deg, transparent 30px, $disabled-accent-color 0) top left;
+  cursor: auto;
+}
+
 .card__text {
   margin-left: calc(51px - $card-order-width);
   display: flex;
   flex-direction: column;
+}
+
+.card__text_disabled {
+  opacity: 0.5;
 }
 
 .card__tagline {
@@ -66,11 +79,19 @@
   @include card-title-font;
 }
 
+.card__title_disabled {
+  color: $card-text-font-color;
+}
+
 .card__subtitle {
   margin-bottom: 15px;
   font-size: 24px;
   line-height: 28px;
   @include card-title-font;
+}
+
+.card__subtitle_disabled {
+  color: $card-text-font-color;
 }
 
 .card__description {
@@ -87,6 +108,10 @@
   width: 320px;
   height: 272px;
   border-radius: 12px;
+}
+
+.card__photo_disabled {
+  opacity: 0.5;
 }
 
 .card__sticker {
@@ -114,6 +139,14 @@
   background-color: $hover-selected-accent-color;
 }
 
+.card__sticker_disabled {
+  background-color: $disabled-accent-color;
+}
+
+.card:hover .card__sticker_disabled {
+  background-color: $disabled-accent-color;
+}
+
 .card__sticker-text {
   font-weight: 400;
   font-size: 21px;
@@ -134,6 +167,10 @@
   line-height: 15px;
   text-align: center;
   color: $caption-color;
+}
+
+.caption_disabled {
+  color: #FFFF66;
 }
 
 .caption_link {

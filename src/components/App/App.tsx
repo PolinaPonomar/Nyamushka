@@ -31,6 +31,7 @@ const App = ({num}: AppProps) => {
             numOfKg={'5'}
             complimentString={'заказчик доволен'}
             selectedCaption={'Филе из цыплят с трюфелями в бульоне.'}
+            disabled={true}
           />
         </div>
       </div>

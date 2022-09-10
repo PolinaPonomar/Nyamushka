@@ -5,12 +5,13 @@ import image from '../../images/cat.png'
 //const image = require('../../images/cat.png') - можно сделать так без index.d.ts и строчек в tsconfig.json, но это нге так красиво (?)
 
 export interface CardProps {
-  taste?: string
+  taste: string
   numOfFeeds: string
   numOfMice: number
   numOfKg: string
   complimentString?: string
   selectedCaption: string
+  disabled?: boolean
 }
 
 const Card = (props: CardProps) => {
@@ -29,16 +30,18 @@ const Card = (props: CardProps) => {
   }
 
   function clickOnCard (): void {
-    setIsCardSelected(!isCardSelected)
+    if (!props.disabled) {
+      setIsCardSelected(!isCardSelected)
+    }
   }
 
   return (
     <div className="wrapper">
-      <Link className={ isCardSelected ? "card card_selected": "card"} to="/" onClick={clickOnCard}>
-        <div className="card__text">
+      <Link className={ props.disabled ? "card card_disabled" : isCardSelected ? "card card_selected" : "card"} to="/" onClick={clickOnCard}>
+        <div className={ props.disabled ? "card__text card__text_disabled" : "card__text"}>
           <p className="card__tagline">Сказочное заморское яство</p>
-          <p className="card__title">Нямушка</p>
-          <p className="card__subtitle">{props.taste}</p>
+          <p className={ props.disabled ? "card__title card__title_disabled" : "card__title"}>Нямушка</p>
+          <p className={ props.disabled ? "card__subtitle card__subtitle_disabled" : "card__subtitle"}>{props.taste}</p>
           <p className="card__description">
             <span className="card__description card__description_accent">{props.numOfFeeds} </span>
             порций
@@ -49,8 +52,8 @@ const Card = (props: CardProps) => {
           </p>
           <p className="card__description">{props.complimentString}</p>
         </div>
-        <img className="card__photo" src={image} alt='Пушистый котик со светлой шерсткой и миндальными глазами'/>
-        <div className={ isCardSelected ? "card__sticker card__sticker_selected" :"card__sticker"}>
+        <img className={ props.disabled ? "card__photo card__photo_disabled" : "card__photo"} src={image} alt='Пушистый котик со светлой шерсткой и миндальными глазами'/>
+        <div className={ props.disabled ? "card__sticker card__sticker_disabled" : isCardSelected ? "card__sticker card__sticker_selected" : "card__sticker"}>
           <p className="card__sticker-text card__sticker-text_accent">
             {props.numOfKg}
             <br/>
@@ -58,14 +61,13 @@ const Card = (props: CardProps) => {
           </p>
         </div>
       </Link>
-      <p className="caption">
-        { isCardSelected ? props.selectedCaption :
-          (<>
-          Чего сидишь? Порадуй котэ,
-          <Link className="caption caption_link" to="/" onClick={clickOnCard}> купи.</Link>
-          </>)
+        { props.disabled ? (<p className="caption caption_disabled">Печалька, {props.taste} закончился.</p>) :
+          isCardSelected ? (<p className="caption">{props.selectedCaption}</p>) :
+          (<p className="caption">
+            Чего сидишь? Порадуй котэ,
+            <Link className="caption caption_link" to="/" onClick={clickOnCard}> купи.</Link>
+          </p>)
         }
-      </p>
     </div>
   );
 };
