@@ -35,9 +35,19 @@ const Card = (props: CardProps) => {
     }
   }
 
+  // function handleCardHover (): void {
+  //   alert('z');
+  // }
+
+  // useEffect( () => {
+
+  // }, [] )
+  // если клик по карточке - onClick то подсовываем стиль без ховера
+  // когда мышь уходит с карточки - подсовываем стиль с ховером onMouseOver={handleCardHover}
+
   return (
     <div className="wrapper">
-      <Link className={ props.disabled ? "card card_disabled" : isCardSelected ? "card card_selected" : "card"} to="/" onClick={clickOnCard}>
+      <Link className={ props.disabled ? "card card_disabled" : isCardSelected ? "card card_selected" : "card"} to="/" onClick={clickOnCard} >
         <div className={ props.disabled ? "card__text card__text_disabled" : "card__text"}>
           <p className="card__tagline">Сказочное заморское яство</p>
           <p className={ props.disabled ? "card__title card__title_disabled" : "card__title"}>Нямушка</p>

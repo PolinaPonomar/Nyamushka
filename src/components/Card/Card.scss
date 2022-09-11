@@ -2,15 +2,16 @@
 @import '../../styles/mixins.scss';
 
 .wrapper {
+  margin: $half-of-min-distance-between-cards;
   display: flex;
   flex-direction: column;
 }
 
 .card {
   position: relative;
-  padding: $card-order-width;
-  width: calc(320px - $card-order-width*2);
-  height: calc(480px - $card-order-width*2);
+  padding: $card-border-width;
+  width: calc(320px - $card-border-width*2);
+  height: calc(480px - $card-border-width*2);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -25,10 +26,10 @@
   content: '';
   display: block;
   position: absolute;
-  top: $card-order-width;
-  left: $card-order-width;
-  width: calc(100% - $card-order-width*2);
-  height: calc(100% - $card-order-width*2);
+  top: $card-border-width;
+  left: $card-border-width;
+  width: calc(100% - $card-border-width*2);
+  height: calc(100% - $card-border-width*2);
   border-radius: 12px;
   background: linear-gradient(135deg, transparent 29px, $card-background-color 0) top left;
   z-index: -1;
@@ -47,26 +48,26 @@
 }
 
 .card_disabled  {
-  background: linear-gradient(135deg, transparent 30px, $disabled-accent-color 0) top left;
+  background: linear-gradient(135deg, transparent 30px, $disabled-color 0) top left;
 }
 
 .card_disabled:hover  {
-  background: linear-gradient(135deg, transparent 30px, $disabled-accent-color 0) top left;
+  background: linear-gradient(135deg, transparent 30px, $disabled-color 0) top left;
   cursor: auto;
 }
 
 .card__text {
-  margin-left: calc(51px - $card-order-width);
+  margin-left: calc(51px - $card-border-width);
   display: flex;
   flex-direction: column;
 }
 
 .card__text_disabled {
-  opacity: 0.5;
+  opacity: $disabled-opacity;
 }
 
 .card__tagline {
-  margin: calc(21px - $card-order-width) 0 5px 0;
+  margin: calc(21px - $card-border-width) 0 5px 0;
   font-size: 16px;
   line-height: 19px;
   @include card-text-font;
@@ -105,13 +106,13 @@
 }
 
 .card__photo {
-  width: 320px;
+  width: calc(320px - $card-border-width*2);
   height: 272px;
   border-radius: 12px;
 }
 
 .card__photo_disabled {
-  opacity: 0.5;
+  opacity: $disabled-opacity;
 }
 
 .card__sticker {
@@ -140,11 +141,11 @@
 }
 
 .card__sticker_disabled {
-  background-color: $disabled-accent-color;
+  background-color: $disabled-color;
 }
 
 .card:hover .card__sticker_disabled {
-  background-color: $disabled-accent-color;
+  background-color: $disabled-color;
 }
 
 .card__sticker-text {
@@ -170,7 +171,7 @@
 }
 
 .caption_disabled {
-  color: #FFFF66;
+  color: $disabled-accent-color;
 }
 
 .caption_link {
@@ -181,4 +182,29 @@
 
 .caption_link:hover {
   color: $link-cover-color;
+}
+
+@media screen and (max-width: 375px) {
+  .card {
+    width: calc(280px - $card-border-width*2);
+    height: calc(420px - $card-border-width*2);
+  }
+
+  .card__text {
+    margin-left: 40px;
+  }
+
+  .card__tagline {
+    margin: 17px 0 0 0;
+  }
+
+  .card__subtitle {
+    margin-bottom: 10px;
+  }
+
+  .card__photo {
+    width: calc(280px - $card-border-width*2);
+    height: 232px;
+    border-radius: 12px;
+  }
 }

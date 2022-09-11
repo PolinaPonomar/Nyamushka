@@ -1,4 +1,6 @@
-$card-order-width: 4px;
+$card-border-width: 4px;
+$disabled-opacity: 0.5;
+$half-of-min-distance-between-cards: 10px;
 // цвета
 $card-background-color: #F2F2F2;
 // акцентные цвета сервиса
@@ -6,7 +8,8 @@ $accent-color: #1698D9;
 $hover-accent-color: #2EA8E6;
 $selected-accent-color: #D91667;
 $hover-selected-accent-color: #E52E7A;
-$disabled-accent-color: #B3B3B3;
+$disabled-color: #B3B3B3;
+$disabled-accent-color: #FFFF66;
 // цвета шрифтов
 $title-color: #FFFFFF;
 $title-shadow-color: #000000;

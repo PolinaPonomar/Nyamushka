@@ -3,11 +3,12 @@
 
 .page {
   position: relative;
-  padding: 0 80px;
+  padding: 10px calc(80px - $half-of-min-distance-between-cards) $half-of-min-distance-between-cards;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background-image: url(../../images/background.png);
   background-size: cover;
 }
@@ -24,7 +25,7 @@
 }
 
 .content {
-  max-width: 1120px;
+  max-width: calc(1120px + 2*$half-of-min-distance-between-cards);
   width: 100%;
   height: 100%;
   display: flex;
@@ -34,17 +35,36 @@
 }
 
 .title {
-  margin: 36px 0 24px 0;
+  margin-bottom: 24px;
   font-family: 'Exo2.0';
   font-weight: 100;
   font-size: 36px;
   line-height: 44px;
   color: $title-color;
   text-shadow: 0px 1px 1px $title-shadow-color;
+  text-align: center;
 }
 
 .cards {
+  margin: calc(-1 * $half-of-min-distance-between-cards);
   width: 100%;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1180px) {
+  .page {
+    padding: 10px 40px $half-of-min-distance-between-cards;
+  }
+
+  .cards {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .page {
+    padding: 10px 20px $half-of-min-distance-between-cards;
+  }
 }
