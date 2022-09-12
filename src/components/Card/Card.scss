@@ -43,7 +43,11 @@
   background: linear-gradient(135deg, transparent 30px, $selected-accent-color 0) top left;
 }
 
-.card_selected:hover {
+.card_selected:hover { //ono
+  background: linear-gradient(135deg, transparent 30px, $selected-accent-color 0) top left;
+}
+
+.card_selected-hover:hover {
   background: linear-gradient(135deg, transparent 30px, $hover-selected-accent-color 0) top left;
 }
 
@@ -71,6 +75,10 @@
   font-size: 16px;
   line-height: 19px;
   @include card-text-font;
+}
+
+.card__tagline_accent {
+  color: $hover-selected-accent-color;
 }
 
 .card__title {
@@ -136,7 +144,11 @@
   background-color: $selected-accent-color;
 }
 
-.card:hover .card__sticker_selected {
+.card:hover .card__sticker_selected { // ono
+  background-color: $selected-accent-color;
+}
+
+.card:hover .card__sticker_selected-hover {
   background-color: $hover-selected-accent-color;
 }
 

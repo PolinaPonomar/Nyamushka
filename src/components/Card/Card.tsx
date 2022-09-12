@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './Card.scss'
 import { Link } from 'react-router-dom'
 import image from '../../images/cat.png'
@@ -16,6 +16,7 @@ export interface CardProps {
 
 const Card = (props: CardProps) => {
   const [isCardSelected, setIsCardSelected] = useState(false);
+  const [isCardSelectedHover, setIsCardSelectedHover] = useState(false);
 
   function makeСorrectDeclensionOfMouseWord (numOfMice: number): string {
     if ((numOfMice == 1)||((numOfMice % 10 === 1) && (numOfMice % 100 !== 11))) {
@@ -32,24 +33,40 @@ const Card = (props: CardProps) => {
   function clickOnCard (): void {
     if (!props.disabled) {
       setIsCardSelected(!isCardSelected)
+      setIsCardSelectedHover(false);
     }
   }
 
-  // function handleCardHover (): void {
-  //   alert('z');
-  // }
+  function handleMouseEnter (): void {
+    if(isCardSelected) {
+      setIsCardSelectedHover(true);
+    }
+  }
 
-  // useEffect( () => {
-
-  // }, [] )
-  // если клик по карточке - onClick то подсовываем стиль без ховера
-  // когда мышь уходит с карточки - подсовываем стиль с ховером onMouseOver={handleCardHover}
+  function handleMouseOver (): void {
+    setIsCardSelectedHover(false);
+  }
 
   return (
     <div className="wrapper">
-      <Link className={ props.disabled ? "card card_disabled" : isCardSelected ? "card card_selected" : "card"} to="/" onClick={clickOnCard} >
+      <Link 
+        className=
+        {
+          props.disabled ? "card card_disabled" : 
+          isCardSelectedHover? "card card_selected-hover" :
+          isCardSelected ? "card card_selected" : 
+          "card"
+        }
+        to="/"
+        onClick={clickOnCard}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseOver}
+      >
         <div className={ props.disabled ? "card__text card__text_disabled" : "card__text"}>
-          <p className="card__tagline">Сказочное заморское яство</p>
+          {isCardSelectedHover ? 
+            (<p className="card__tagline card__tagline_accent">Котэ не одобряет?</p>) :
+            (<p className="card__tagline">Сказочное заморское яство</p>)
+          }
           <p className={ props.disabled ? "card__title card__title_disabled" : "card__title"}>Нямушка</p>
           <p className={ props.disabled ? "card__subtitle card__subtitle_disabled" : "card__subtitle"}>{props.taste}</p>
           <p className="card__description">
@@ -63,7 +80,12 @@ const Card = (props: CardProps) => {
           <p className="card__description">{props.complimentString}</p>
         </div>
         <img className={ props.disabled ? "card__photo card__photo_disabled" : "card__photo"} src={image} alt='Пушистый котик со светлой шерсткой и миндальными глазами'/>
-        <div className={ props.disabled ? "card__sticker card__sticker_disabled" : isCardSelected ? "card__sticker card__sticker_selected" : "card__sticker"}>
+        <div className={
+          props.disabled ? "card__sticker card__sticker_disabled" :
+          isCardSelectedHover? "card__sticker card__sticker_selected-hover":
+          isCardSelected ? "card__sticker card__sticker_selected" :
+          "card__sticker"
+        }>
           <p className="card__sticker-text card__sticker-text_accent">
             {props.numOfKg}
             <br/>
