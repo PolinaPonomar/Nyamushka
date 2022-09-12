@@ -21,7 +21,6 @@
   text-decoration: none;
   z-index: 0;
 }
-
 .card::before {
   content: '';
   display: block;
@@ -34,27 +33,21 @@
   background: linear-gradient(135deg, transparent 29px, $card-background-color 0) top left;
   z-index: -1;
 }
-
 .card:hover {
   background: linear-gradient(135deg, transparent 30px, $hover-accent-color 0) top left;
 }
-
 .card_selected {
   background: linear-gradient(135deg, transparent 30px, $selected-accent-color 0) top left;
 }
-
-.card_selected:hover { //ono
+.card_selected:hover {
   background: linear-gradient(135deg, transparent 30px, $selected-accent-color 0) top left;
 }
-
 .card_selected-hover:hover {
   background: linear-gradient(135deg, transparent 30px, $hover-selected-accent-color 0) top left;
 }
-
 .card_disabled  {
   background: linear-gradient(135deg, transparent 30px, $disabled-color 0) top left;
 }
-
 .card_disabled:hover  {
   background: linear-gradient(135deg, transparent 30px, $disabled-color 0) top left;
   cursor: auto;
@@ -65,7 +58,6 @@
   display: flex;
   flex-direction: column;
 }
-
 .card__text_disabled {
   opacity: $disabled-opacity;
 }
@@ -76,7 +68,6 @@
   line-height: 19px;
   @include card-text-font;
 }
-
 .card__tagline_accent {
   color: $hover-selected-accent-color;
 }
@@ -87,7 +78,6 @@
   line-height: 56px;
   @include card-title-font;
 }
-
 .card__title_disabled {
   color: $card-text-font-color;
 }
@@ -98,7 +88,6 @@
   line-height: 28px;
   @include card-title-font;
 }
-
 .card__subtitle_disabled {
   color: $card-text-font-color;
 }
@@ -108,7 +97,6 @@
   line-height: 16px;
   @include card-text-font;
 }
-
 .card__description_accent {
   font-weight: 700;
 }
@@ -118,7 +106,6 @@
   height: 272px;
   border-radius: 12px;
 }
-
 .card__photo_disabled {
   opacity: $disabled-opacity;
 }
@@ -135,27 +122,21 @@
   justify-content: center;
   background-color: $accent-color;
 }
-
 .card:hover .card__sticker {
   background-color: $hover-accent-color;
 }
-
 .card__sticker_selected {
   background-color: $selected-accent-color;
 }
-
-.card:hover .card__sticker_selected { // ono
+.card:hover .card__sticker_selected {
   background-color: $selected-accent-color;
 }
-
 .card:hover .card__sticker_selected-hover {
   background-color: $hover-selected-accent-color;
 }
-
 .card__sticker_disabled {
   background-color: $disabled-color;
 }
-
 .card:hover .card__sticker_disabled {
   background-color: $disabled-color;
 }
@@ -167,7 +148,6 @@
   text-align: center;
   color: $sticker-font-color;
 }
-
 .card__sticker-text_accent {
   font-size: 42px;
   line-height: 22px;
@@ -181,7 +161,6 @@
   text-align: center;
   color: $caption-color;
 }
-
 .caption_disabled {
   color: $disabled-accent-color;
 }
@@ -191,7 +170,6 @@
   color: $link-color;
   border-bottom: dashed;
 }
-
 .caption_link:hover {
   color: $link-cover-color;
 }
