@@ -4,10 +4,6 @@ import { Link } from 'react-router-dom'
 import image from '../../images/cat.png'
 import { makeСorrectDeclensionOfMouseWord } from '../../utils/utils'
 
-//  подредачить функцию?
-//  добавить миксины для отсупа между заголовком и карточками?
-//  минус марджин сработал по верхам, но не сработал по бокам, мб можно как-то исправить?
-
 export interface CardProps {
   taste: string
   numOfFeeds: string

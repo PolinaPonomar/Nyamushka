@@ -17,7 +17,7 @@ module.exports = {
     open: true,
   },
   resolve: {
-    extensions: ['*', '.tsx', '.ts', '.js', '.jsx', '.scss'], // чтобы каждый раз не проставлять расширения
+    extensions: ['*', '.tsx', '.ts', '.js', '.jsx', '.scss'],
   },
   plugins: [
     new HtmlWebpackPlugin({
