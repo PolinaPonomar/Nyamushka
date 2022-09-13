@@ -14,7 +14,7 @@
 как курсор ушел с нее после первоначального выбора.
 
 ## Инструменты:
-+ Webpack (самостоятельная настройка)
++ Webpack
 + React
 + HTML, CSS, Sass
 + TypeScript, JavaScript
