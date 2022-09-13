@@ -8,21 +8,21 @@ const App = () => {
       <div className="content">
         <h1 className="title">Ты сегодня покормил кота?</h1>
         <div className="cards">
-          <Card 
+          <Card
             taste={'c фуа-гра'}
             numOfFeeds={'10'}
             numOfMice={1}
             numOfKg={'0,5'}
             selectedCaption={'Печень утки разварная с артишоками.'}
           />
-          <Card 
+          <Card
             taste={'c рыбой'}
             numOfFeeds={'40'}
             numOfMice={2}
             numOfKg={'2'}
             selectedCaption={'Головы щучьи с чесноком да свежайшая сёмгушка.'}
           />
-          <Card 
+          <Card
             taste={'c курой'}
             numOfFeeds={'100'}
             numOfMice={5}

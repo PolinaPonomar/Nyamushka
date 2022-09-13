@@ -19,6 +19,7 @@
 + HTML, CSS, Sass
 + TypeScript, JavaScript
 + Именование css-классов по БЭМ
++ ESLint (стайлгайд Airbnb)
 
 ## Инструменты:
 Запустить страницу в режиме разработки - `npm run dev`
