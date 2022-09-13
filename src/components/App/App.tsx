@@ -2,9 +2,7 @@ import React from 'react'
 import './App.scss'
 import Card from '../Card/Card';
 
-type AppProps = { num: number };
-
-const App = ({num}: AppProps) => {
+const App = () => {
   return (
     <main className="page">
       <div className="content">

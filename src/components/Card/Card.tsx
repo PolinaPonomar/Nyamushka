@@ -7,6 +7,8 @@ import {makeСorrectDeclensionOfMouseWord} from '../../utils/utils'
 //  подредачить функцию?
 //  добавить миксины для отсупа между заголовком и карточками?
 //  минус марджин сработал по верхам, но не сработал по бокам, мб можно как-то исправить?
+//  добавь линтер
+
 
 export interface CardProps {
   taste: string

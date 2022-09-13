@@ -1,12 +1,13 @@
 import './styles/index'
 import React from 'react'
-import {render} from 'react-dom'
+import { createRoot } from 'react-dom/client';
 import App from './components/App/App'
 import { BrowserRouter } from "react-router-dom";
 
-render(
+const container = document.getElementById('root');
+const root = createRoot(container!);
+root.render(
   <BrowserRouter>
-    <App num={1234}/>
-  </BrowserRouter>,
-  document.getElementById('root')
-)
+    <App/>
+  </BrowserRouter>
+);
